@@ -14,7 +14,7 @@ export interface DbStatus {
   lastAttempt: string;
 }
 
-const DEFAULT_MONGO_URI = 'mongodb://localhost:27017/VulnX';
+const DEFAULT_MONGO_URI = 'mongodb://127.0.0.1:27017/VulnX';
 
 export let dbStatus: DbStatus = {
   connected: false,
