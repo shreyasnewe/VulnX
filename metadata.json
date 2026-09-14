@@ -1,0 +1,6 @@
+{
+  "name": "VulnX — Vulnerability Assessment Platform",
+  "description": "Web-based automated preliminary VAPT and security misconfiguration assessment platform with MERN stack and Python scanner.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
