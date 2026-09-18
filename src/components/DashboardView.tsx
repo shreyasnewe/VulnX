@@ -89,9 +89,9 @@ export default function DashboardView({
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-slate-800/60">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-1 border-b border-slate-800/60">
         <div>
           <h1 id="dashboard-heading" className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
             VulnX Security Dashboard
@@ -105,7 +105,7 @@ export default function DashboardView({
         <button
           id="primary-new-scan-btn"
           onClick={onNewScan}
-          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm shadow-lg shadow-cyan-500/20 transition-all cursor-pointer shrink-0"
+          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-red-500 hover:bg-red-400 text-white font-semibold text-sm shadow-lg shadow-red-500/20 transition-all cursor-pointer shrink-0"
         >
           <Plus className="w-4 h-4 stroke-[2.5]" />
           <span>New Security Scan</span>
@@ -118,11 +118,11 @@ export default function DashboardView({
         <div
           id="summary-targets-card"
           onClick={() => onNavigateTab('targets')}
-          className="bg-[#0e1422] border border-slate-800/90 rounded-2xl p-5 hover:border-cyan-500/40 transition-all cursor-pointer group shadow-sm"
+          className="bg-[#0F151C] border border-[#1E293B] rounded-2xl p-5 hover:border-red-500/40 transition-all cursor-pointer group shadow-sm"
         >
           <div className="flex items-center justify-between text-slate-400 mb-3">
             <span className="text-xs font-semibold uppercase tracking-wider">Targets</span>
-            <div className="w-8 h-8 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="w-8 h-8 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center group-hover:scale-105 transition-transform">
               <Globe className="w-4 h-4" />
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function DashboardView({
             <div className="text-3xl font-bold text-white tracking-tight">
               {metrics.targetsCount}
             </div>
-            <span className="text-xs text-cyan-400 flex items-center gap-1 group-hover:underline">
+            <span className="text-xs text-red-400 flex items-center gap-1 group-hover:underline">
               View targets <ChevronRight className="w-3 h-3" />
             </span>
           </div>
@@ -141,7 +141,7 @@ export default function DashboardView({
         <div
           id="summary-scans-card"
           onClick={() => onNavigateTab('scans')}
-          className="bg-[#0e1422] border border-slate-800/90 rounded-2xl p-5 hover:border-cyan-500/40 transition-all cursor-pointer group shadow-sm"
+          className="bg-[#0F151C] border border-[#1E293B] rounded-2xl p-5 hover:border-red-500/40 transition-all cursor-pointer group shadow-sm"
         >
           <div className="flex items-center justify-between text-slate-400 mb-3">
             <span className="text-xs font-semibold uppercase tracking-wider">Scans</span>
@@ -164,7 +164,7 @@ export default function DashboardView({
         <div
           id="summary-vulnerabilities-card"
           onClick={() => onNavigateTab('vulnerabilities')}
-          className="bg-[#0e1422] border border-slate-800/90 rounded-2xl p-5 hover:border-amber-500/40 transition-all cursor-pointer group shadow-sm"
+          className="bg-[#0F151C] border border-[#1E293B] rounded-2xl p-5 hover:border-amber-500/40 transition-all cursor-pointer group shadow-sm"
         >
           <div className="flex items-center justify-between text-slate-400 mb-3">
             <span className="text-xs font-semibold uppercase tracking-wider">Vulnerabilities</span>
@@ -183,10 +183,10 @@ export default function DashboardView({
           <p className="text-xs text-slate-500 mt-1.5">Total security findings identified</p>
         </div>
 
-        {/* Security Score Card */}
+        {/*
         <div
           id="summary-score-card"
-          className="bg-[#0e1422] border border-slate-800/90 rounded-2xl p-5 shadow-sm"
+          className="bg-[#0F151C] border border-[#1E293B] rounded-2xl p-5 shadow-sm"
         >
           <div className="flex items-center justify-between text-slate-400 mb-3">
             <span className="text-xs font-semibold uppercase tracking-wider">Security Score</span>
@@ -205,12 +205,13 @@ export default function DashboardView({
           </div>
           <p className="text-xs text-slate-500 mt-1.5">Current overall baseline score</p>
         </div>
+        */}
       </div>
 
       {/* Main Grid: Vulnerability Overview Chart & Recent Vulnerabilities */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Vulnerability Overview (Recharts) */}
-        <div className="lg:col-span-6 bg-[#0e1422] border border-slate-800/90 rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col">
+        <div className="lg:col-span-6 bg-[#0F151C] border border-[#1E293B] rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="text-base font-bold text-white tracking-tight">Vulnerability Overview</h2>
@@ -273,7 +274,7 @@ export default function DashboardView({
         </div>
 
         {/* Recent Vulnerabilities */}
-        <div className="lg:col-span-6 bg-[#0e1422] border border-slate-800/90 rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col">
+        <div className="lg:col-span-6 bg-[#0F151C] border border-[#1E293B] rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="text-base font-bold text-white tracking-tight">Recent Vulnerabilities</h2>
@@ -281,7 +282,7 @@ export default function DashboardView({
             </div>
             <button
               onClick={() => onNavigateTab('vulnerabilities')}
-              className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 transition-colors cursor-pointer"
+              className="text-xs font-semibold text-red-400 hover:text-red-300 flex items-center gap-1 transition-colors cursor-pointer"
             >
               View all <ChevronRight className="w-3.5 h-3.5" />
             </button>
@@ -310,7 +311,7 @@ export default function DashboardView({
                       >
                         {finding.severity}
                       </span>
-                      <span className="text-xs font-semibold text-slate-200 group-hover:text-cyan-300 transition-colors truncate">
+                      <span className="text-xs font-semibold text-slate-200 group-hover:text-red-300 transition-colors truncate">
                         {finding.name}
                       </span>
                     </div>
@@ -321,7 +322,7 @@ export default function DashboardView({
 
                   <span className="text-xs text-slate-400 group-hover:text-white transition-colors shrink-0 flex items-center gap-1">
                     Details
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-cyan-400" />
+                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-red-400" />
                   </span>
                 </div>
               ))
@@ -330,8 +331,8 @@ export default function DashboardView({
         </div>
       </div>
 
-      {/* Recent Scans Table */}
-      <div className="bg-[#0e1422] border border-slate-800/90 rounded-2xl p-5 sm:p-6 shadow-sm">
+      {/*
+      <div className="bg-[#0F151C] border border-[#1E293B] rounded-2xl p-5 sm:p-6 shadow-sm">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h2 className="text-base font-bold text-white tracking-tight">Recent Scans</h2>
@@ -339,7 +340,7 @@ export default function DashboardView({
           </div>
           <button
             onClick={() => onNavigateTab('scans')}
-            className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 transition-colors cursor-pointer"
+            className="text-xs font-semibold text-red-400 hover:text-red-300 flex items-center gap-1 transition-colors cursor-pointer"
           >
             All scans <ChevronRight className="w-3.5 h-3.5" />
           </button>
@@ -409,6 +410,7 @@ export default function DashboardView({
           </table>
         </div>
       </div>
+      */}
     </div>
   );
 }

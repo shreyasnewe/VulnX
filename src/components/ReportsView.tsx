@@ -36,7 +36,7 @@ export default function ReportsView({
 
   if (!activeScan) {
     return (
-      <div className="bg-[#0e1422] border border-slate-800/90 rounded-2xl p-12 text-center text-slate-400 max-w-4xl mx-auto">
+      <div className="bg-[#0F151C] border border-[#1E293B] rounded-2xl p-12 text-center text-slate-400 max-w-4xl mx-auto">
         <FileText className="w-12 h-12 mx-auto text-slate-600 mb-3" />
         <h3 className="text-base font-semibold text-white">No Reports Generated</h3>
         <p className="text-xs text-slate-500 mt-1">
@@ -68,7 +68,7 @@ export default function ReportsView({
             <select
               value={activeScanId}
               onChange={(e) => setActiveScanId(e.target.value)}
-              className="bg-[#0e1422] border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-500"
+              className="bg-[#0F151C] border border-[#1E293B] rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-red-500"
             >
               {scans.map((s) => (
                 <option key={s.id} value={s.id}>
@@ -80,7 +80,7 @@ export default function ReportsView({
 
           <button
             onClick={() => downloadReportPdf(activeScan.id, `VulnX-Assessment-${activeScan.id}.pdf`)}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-xs shadow-md shadow-cyan-500/20 transition-all cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-red-500 hover:bg-red-400 text-white font-semibold text-xs shadow-md shadow-red-500/20 transition-all cursor-pointer"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Download PDF</span>
@@ -97,12 +97,12 @@ export default function ReportsView({
       </div>
 
       {/* Printable Report Document Card */}
-      <div className="bg-[#0e1422] border border-slate-800/90 rounded-2xl p-6 sm:p-8 shadow-sm space-y-8 print:bg-white print:text-black print:border-none print:shadow-none print:p-0">
+      <div className="bg-[#0F151C] border border-[#1E293B] rounded-2xl p-6 sm:p-8 shadow-sm space-y-8 print:bg-white print:text-black print:border-none print:shadow-none print:p-0">
         {/* Report Header */}
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-6 border-b border-slate-800 print:border-gray-200">
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-cyan-400 print:text-blue-600">
+              <span className="text-xs font-bold uppercase tracking-wider text-red-400 print:text-red-600">
                 VulnX VAPT Security Assessment Report
               </span>
             </div>

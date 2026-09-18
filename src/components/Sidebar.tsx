@@ -30,7 +30,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, onLog
   return (
     <aside
       id="app-sidebar"
-      className="w-64 border-r border-slate-800/80 bg-[#090d16] flex flex-col justify-between shrink-0 p-4 select-none"
+      className="w-64 border-r border-white/10 bg-[#05070A] flex flex-col justify-between shrink-0 p-4 select-none"
     >
       <div className="space-y-6">
         {/* Brand Header */}
@@ -38,12 +38,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, onLog
           onClick={() => setActiveTab('dashboard')}
           className="flex items-center gap-3 px-2 py-1 cursor-pointer group"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-600 to-cyan-400 text-slate-950 flex items-center justify-center font-bold shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-red-600 to-red-400 text-white flex items-center justify-center font-bold shadow-md shadow-red-500/20 group-hover:scale-105 transition-transform">
             <ShieldAlert className="w-5 h-5 text-slate-950" />
           </div>
           <div>
-            <div className="text-base font-bold text-white tracking-tight flex items-center gap-1">
-              Vuln<span className="text-cyan-400">X</span>
+            <div className="text-base font-bold text-white tracking-tight flex items-center gap-0">
+              Vuln<span className="text-red-400">X</span>
             </div>
             <div className="text-[11px] text-slate-400 font-medium">Security Platform</div>
           </div>
@@ -62,7 +62,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, onLog
                 onClick={() => setActiveTab(item.id)}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                   isActive
-                    ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20 font-bold'
+                    ? 'bg-red-500 text-white shadow-md shadow-red-500/20 font-bold'
                     : 'text-slate-300 hover:bg-slate-800/60 hover:text-white'
                 }`}
               >
@@ -83,7 +83,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, onLog
       </div>
 
       {/* Bottom Navigation: Settings & Logout */}
-      <div className="pt-4 border-t border-slate-800/80 space-y-1.5">
+      <div className="pt-4 border-t border-white/10 space-y-1.5">
         <button
           id="sidebar-nav-settings"
           onClick={() => setActiveTab('settings')}

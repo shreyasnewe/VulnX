@@ -50,13 +50,13 @@ export const AuthView: React.FC<AuthViewProps> = ({ onAuthenticated }) => {
   return (
     <div className="min-h-screen w-full bg-[#090d16] flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background Glow Elements */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-full max-w-md bg-[#0f172a] border border-slate-800 rounded-xl shadow-2xl p-8 relative z-10">
         {/* Brand Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 mb-4 shadow-lg shadow-cyan-500/5">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 mb-4 shadow-lg shadow-red-500/5">
             <Shield className="w-8 h-8" />
           </div>
           <h1 className="text-2xl font-bold text-white tracking-tight">VulnX Security Engine</h1>
@@ -75,7 +75,7 @@ export const AuthView: React.FC<AuthViewProps> = ({ onAuthenticated }) => {
             }}
             className={`flex-1 py-2 text-xs font-semibold rounded-md transition-all ${
               !isRegister
-                ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 shadow-sm'
+                ? 'bg-red-500/20 text-red-400 border border-red-500/30 shadow-sm'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
@@ -89,7 +89,7 @@ export const AuthView: React.FC<AuthViewProps> = ({ onAuthenticated }) => {
             }}
             className={`flex-1 py-2 text-xs font-semibold rounded-md transition-all ${
               isRegister
-                ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 shadow-sm'
+                ? 'bg-red-500/20 text-red-400 border border-red-500/30 shadow-sm'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
@@ -120,7 +120,7 @@ export const AuthView: React.FC<AuthViewProps> = ({ onAuthenticated }) => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Alex Rivera"
-                  className="w-full pl-9 pr-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors"
+                  className="w-full pl-9 pr-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-red-500 transition-colors"
                 />
               </div>
             </div>
@@ -138,7 +138,7 @@ export const AuthView: React.FC<AuthViewProps> = ({ onAuthenticated }) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="analyst@domain.com"
-                className="w-full pl-9 pr-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors"
+                className="w-full pl-9 pr-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-red-500 transition-colors"
               />
             </div>
           </div>
@@ -155,7 +155,7 @@ export const AuthView: React.FC<AuthViewProps> = ({ onAuthenticated }) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-9 pr-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors"
+                className="w-full pl-9 pr-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-red-500 transition-colors"
               />
             </div>
             {isRegister && (
@@ -166,7 +166,7 @@ export const AuthView: React.FC<AuthViewProps> = ({ onAuthenticated }) => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full mt-6 py-2.5 px-4 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm rounded-lg flex items-center justify-center gap-2 transition-colors disabled:opacity-50 shadow-lg shadow-cyan-500/20 cursor-pointer"
+            className="w-full mt-6 py-2.5 px-4 bg-red-500 hover:bg-red-400 text-white font-semibold text-sm rounded-lg flex items-center justify-center gap-2 transition-colors disabled:opacity-50 shadow-lg shadow-red-500/20 cursor-pointer"
           >
             {loading ? (
               <span className="inline-block w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
@@ -181,7 +181,7 @@ export const AuthView: React.FC<AuthViewProps> = ({ onAuthenticated }) => {
 
         {/* Security Note */}
         <div className="mt-8 pt-6 border-t border-slate-800/80 flex items-center justify-center gap-2 text-slate-500 text-xs">
-          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-500/70" />
+          <CheckCircle2 className="w-3.5 h-3.5 text-red-500/70" />
           <span>MongoDB persistent authorization & JWT session</span>
         </div>
       </div>

@@ -101,7 +101,7 @@ export default function TargetsView({
 
         <button
           onClick={() => setShowAddModal(true)}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-xs transition-colors cursor-pointer shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-red-500 hover:bg-red-400 text-white font-semibold text-xs transition-colors cursor-pointer shrink-0"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Target</span>
@@ -110,7 +110,7 @@ export default function TargetsView({
 
       {/* Targets List */}
       {targets.length === 0 ? (
-        <div className="bg-[#0e1422] border border-slate-800/90 rounded-2xl p-12 text-center text-slate-400">
+        <div className="bg-[#0F151C] border border-[#1E293B] rounded-2xl p-12 text-center text-slate-400">
           <Globe className="w-12 h-12 mx-auto text-slate-600 mb-3" />
           <h3 className="text-base font-semibold text-white">No targets registered yet</h3>
           <p className="text-xs text-slate-500 mt-1 max-w-md mx-auto">
@@ -118,7 +118,7 @@ export default function TargetsView({
           </p>
           <button
             onClick={() => setShowAddModal(true)}
-            className="mt-4 px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 font-semibold text-xs hover:bg-cyan-400 transition-colors"
+            className="mt-4 px-4 py-2 rounded-xl bg-red-500 text-white font-semibold text-xs hover:bg-red-400 transition-colors"
           >
             Add Your First Target
           </button>
@@ -128,11 +128,11 @@ export default function TargetsView({
           {targets.map((target) => (
             <div
               key={target.id}
-              className="bg-[#0e1422] border border-slate-800/90 hover:border-slate-700/80 rounded-2xl p-5 shadow-sm transition-all flex flex-col justify-between"
+              className="bg-[#0F151C] border border-[#1E293B] hover:border-slate-700/80 rounded-2xl p-5 shadow-sm transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-start justify-between gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center shrink-0">
                     <Globe className="w-4 h-4" />
                   </div>
                   {target.lastScore !== undefined && (
@@ -151,7 +151,7 @@ export default function TargetsView({
                   href={target.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1 mt-1 truncate"
+                  className="text-xs font-mono text-red-400 hover:underline flex items-center gap-1 mt-1 truncate"
                 >
                   <span className="truncate">{target.url}</span>
                   <ExternalLink className="w-3 h-3 shrink-0" />
@@ -173,7 +173,7 @@ export default function TargetsView({
               <div className="mt-5 pt-4 border-t border-slate-800/60 flex items-center justify-between gap-2">
                 <button
                   onClick={() => onScanTarget(target)}
-                  className="flex-1 py-2 px-3 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                  className="flex-1 py-2 px-3 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <Play className="w-3.5 h-3.5 fill-current" />
                   <span>Scan Target</span>
@@ -202,7 +202,7 @@ export default function TargetsView({
           onClick={() => setShowAddModal(false)}
         >
           <div
-            className="bg-[#0f1523] border border-slate-800 rounded-2xl w-full max-w-md p-6 relative shadow-2xl text-slate-100"
+            className="bg-[#141C25] border border-[#1E293B] rounded-2xl w-full max-w-md p-6 relative shadow-2xl text-slate-100"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
@@ -230,7 +230,7 @@ export default function TargetsView({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g., Marketing Website"
-                  className="w-full bg-[#121929] border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                  className="w-full bg-[#121929] border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors"
                   required
                 />
               </div>
@@ -242,7 +242,7 @@ export default function TargetsView({
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
                   placeholder="https://example.com"
-                  className="w-full bg-[#121929] border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors font-mono"
+                  className="w-full bg-[#121929] border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-red-500 transition-colors font-mono"
                   required
                 />
               </div>
@@ -252,7 +252,7 @@ export default function TargetsView({
                   type="checkbox"
                   checked={authorizationConfirmed}
                   onChange={(e) => setAuthorizationConfirmed(e.target.checked)}
-                  className="mt-0.5 w-4 h-4 text-cyan-500 rounded bg-slate-800 border-slate-600 cursor-pointer"
+                  className="mt-0.5 w-4 h-4 text-red-500 rounded bg-slate-800 border-slate-600 cursor-pointer"
                 />
                 <span className="text-xs text-slate-300 leading-relaxed">
                   I confirm that I am authorized to perform security scanning against this domain.
@@ -270,7 +270,7 @@ export default function TargetsView({
                 <button
                   type="submit"
                   disabled={saving}
-                  className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold transition-colors cursor-pointer"
+                  className="px-4 py-2 rounded-xl bg-red-500 hover:bg-red-400 text-white text-xs font-bold transition-colors cursor-pointer"
                 >
                   {saving ? 'Saving...' : 'Save Target'}
                 </button>
@@ -289,7 +289,7 @@ export default function TargetsView({
           }}
         >
           <div
-            className="bg-[#0f1523] border border-red-900/40 rounded-2xl w-full max-w-md p-6 relative shadow-2xl text-slate-100"
+            className="bg-[#141C25] border border-[#1E293B] rounded-2xl w-full max-w-md p-6 relative shadow-2xl text-slate-100"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start gap-3.5">
@@ -301,7 +301,7 @@ export default function TargetsView({
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Are you sure you want to permanently remove{' '}
                   <span className="text-white font-semibold">{targetToDelete.name}</span> (
-                  <span className="font-mono text-cyan-400">{targetToDelete.url}</span>)?
+                  <span className="font-mono text-red-400">{targetToDelete.url}</span>)?
                 </p>
                 <p className="text-[11px] text-amber-400/90 pt-1">
                   ⚠️ This action will permanently remove this target and cascade-delete all associated scan history, vulnerability findings, and executive reports.

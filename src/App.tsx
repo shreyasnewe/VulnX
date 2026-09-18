@@ -137,14 +137,14 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#070a12] text-slate-100 flex flex-col font-sans selection:bg-cyan-500 selection:text-slate-950">
-      {/* Top Application Navbar */}
+    <div className="min-h-screen bg-[#05070A] text-slate-100 flex flex-col font-sans selection:bg-red-500 selection:text-slate-950">
+      {/* Top Application Navbar
       <Navbar
         user={currentUser}
         onNewScan={() => setActiveTab('new-scan')}
         onNavigateTab={(tab) => setActiveTab(tab)}
         onLogout={() => setShowLogoutModal(true)}
-      />
+      />*/}
 
       {/* Main Layout Area */}
       <div className="flex-1 flex overflow-hidden">
@@ -156,7 +156,7 @@ export default function App() {
         />
 
         {/* Dynamic Main Workspace Content */}
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-[#070a12]">
+        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-[#05070A]">
           {activeTab === 'dashboard' && (
             <DashboardView
               metrics={metrics}
@@ -232,7 +232,7 @@ export default function App() {
           onClick={() => setShowLogoutModal(false)}
         >
           <div
-            className="bg-[#0f1523] border border-slate-800 rounded-2xl w-full max-w-md p-6 relative shadow-2xl text-slate-100"
+            className="bg-[#141C25] border border-[#1E293B] rounded-2xl w-full max-w-md p-6 relative shadow-2xl text-slate-100"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start gap-3.5">

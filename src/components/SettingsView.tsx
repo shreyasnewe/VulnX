@@ -63,10 +63,10 @@ export default function SettingsView({ currentUser, onLogout }: SettingsViewProp
       )}
 
       {/* Preferences Form */}
-      <form onSubmit={handleSave} className="bg-[#0e1422] border border-slate-800/90 rounded-2xl p-6 shadow-sm space-y-6">
+      <form onSubmit={handleSave} className="bg-[#0F151C] border border-[#1E293B] rounded-2xl p-6 shadow-sm space-y-6">
         <div className="space-y-4">
           <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-            <Sliders className="w-4 h-4 text-cyan-400" />
+            <Sliders className="w-4 h-4 text-red-400" />
             Scanner Configuration
           </h2>
 
@@ -79,7 +79,7 @@ export default function SettingsView({ currentUser, onLogout }: SettingsViewProp
                 max="180"
                 value={timeoutSeconds}
                 onChange={(e) => setTimeoutSeconds(e.target.value)}
-                className="w-full bg-[#121929] border border-slate-700/80 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-cyan-500"
+                className="w-full bg-[#121929] border border-slate-700/80 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-red-500"
               />
             </div>
 
@@ -95,10 +95,10 @@ export default function SettingsView({ currentUser, onLogout }: SettingsViewProp
           </div>
         </div>
 
-        {/* Notifications */}
+        {/* Notifications
         <div className="space-y-3 pt-5 border-t border-slate-800/60">
           <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-            <Bell className="w-4 h-4 text-cyan-400" />
+            <Bell className="w-4 h-4 text-red-400" />
             Notifications & Alerts
           </h2>
 
@@ -107,7 +107,7 @@ export default function SettingsView({ currentUser, onLogout }: SettingsViewProp
               type="checkbox"
               checked={notifyCritical}
               onChange={(e) => setNotifyCritical(e.target.checked)}
-              className="mt-0.5 w-4 h-4 text-cyan-500 rounded bg-slate-800 border-slate-600 cursor-pointer"
+              className="mt-0.5 w-4 h-4 text-red-500 rounded bg-slate-800 border-slate-600 cursor-pointer"
             />
             <div>
               <span className="text-xs font-semibold text-white block">Notify on Critical/High Findings</span>
@@ -116,21 +116,21 @@ export default function SettingsView({ currentUser, onLogout }: SettingsViewProp
               </span>
             </div>
           </label>
-        </div>
+        </div>*/}
 
         {/* Save Button */}
         <div className="pt-2 flex justify-end">
           <button
             type="submit"
-            className="px-5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold transition-colors cursor-pointer"
+            className="px-5 py-2 rounded-xl bg-red-500 hover:bg-red-400 text-white text-xs font-bold transition-colors cursor-pointer"
           >
             Save Preferences
           </button>
         </div>
       </form>
 
-      {/* Minimal System Status (Kept simple and non-intrusive as requested) */}
-      <div className="bg-[#0e1422] border border-slate-800/90 rounded-2xl p-6 shadow-sm space-y-4">
+      {/*
+      <div className="bg-[#0F151C] border border-[#1E293B] rounded-2xl p-6 shadow-sm space-y-4">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider">
@@ -145,9 +145,8 @@ export default function SettingsView({ currentUser, onLogout }: SettingsViewProp
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-          {/* API Status */}
           <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800/80 flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0">
               <Server className="w-4 h-4" />
             </div>
             <div>
@@ -159,7 +158,6 @@ export default function SettingsView({ currentUser, onLogout }: SettingsViewProp
             </div>
           </div>
 
-          {/* Database Status */}
           <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800/80 flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
               <Database className="w-4 h-4" />
@@ -173,7 +171,6 @@ export default function SettingsView({ currentUser, onLogout }: SettingsViewProp
             </div>
           </div>
 
-          {/* Scanner Status */}
           <div className="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800/80 flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
               <Cpu className="w-4 h-4" />
@@ -188,18 +185,19 @@ export default function SettingsView({ currentUser, onLogout }: SettingsViewProp
           </div>
         </div>
       </div>
+      */}
 
       {/* Account & Session Section */}
-      <div className="bg-[#0e1422] border border-slate-800/90 rounded-2xl p-6 shadow-sm space-y-4">
+      <div className="bg-[#0F151C] border border-[#1E293B] rounded-2xl p-6 shadow-sm space-y-4">
         <div className="flex items-center justify-between pb-3 border-b border-slate-800/60">
           <div>
             <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-              <UserIcon className="w-4 h-4 text-cyan-400" />
+              <UserIcon className="w-4 h-4 text-red-400" />
               Account & Active Session
             </h2>
             <p className="text-xs text-slate-400 mt-0.5">Current authenticated security analyst profile</p>
           </div>
-          <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyan-950/50 text-cyan-400 border border-cyan-800/50">
+          <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-950/50 text-red-400 border border-red-800/50">
             Authenticated
           </span>
         </div>
@@ -208,7 +206,7 @@ export default function SettingsView({ currentUser, onLogout }: SettingsViewProp
           <div>
             <div className="text-sm font-bold text-white">{currentUser?.name || 'Security Analyst'}</div>
             <div className="text-xs font-mono text-slate-400">{currentUser?.email || 'analyst@vulnx.sec'}</div>
-            <div className="text-[11px] text-slate-500 mt-1">Role: Lead Security Analyst · Workspace: VulnX Production</div>
+            <div className="text-[11px] text-slate-500 mt-1">Lead Security Analyst</div>
           </div>
 
           {onLogout && (

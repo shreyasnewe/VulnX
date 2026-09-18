@@ -58,7 +58,7 @@ export default function FindingDetailModal({
     >
       <div
         id="finding-detail-dialog"
-        className="bg-[#0f1523] border border-slate-800 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl p-6 relative text-slate-100"
+        className="bg-[#141C25] border border-[#1E293B] rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl p-6 relative text-slate-100"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -95,9 +95,9 @@ export default function FindingDetailModal({
         <div className="py-5 space-y-5 text-sm">
           {/* Target URL Tested */}
           <div className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-            <Globe className="w-4 h-4 text-cyan-400 shrink-0" />
+            <Globe className="w-4 h-4 text-red-400 shrink-0" />
             <span className="text-xs text-slate-400 font-mono">Affected URL:</span>
-            <span className="text-xs text-cyan-300 font-mono truncate">{finding.urlTested || 'N/A'}</span>
+            <span className="text-xs text-red-300 font-mono truncate">{finding.urlTested || 'N/A'}</span>
           </div>
 
           {/* Description */}
@@ -114,10 +114,10 @@ export default function FindingDetailModal({
           {finding.evidence && (
             <div className="space-y-1.5">
               <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                <Terminal className="w-3.5 h-3.5 text-cyan-400" />
+                <Terminal className="w-3.5 h-3.5 text-red-400" />
                 Technical Evidence & Proof of Concept
               </h3>
-              <div className="bg-[#090d16] p-3 rounded-xl border border-slate-800/90 font-mono text-xs text-cyan-200 overflow-x-auto whitespace-pre-wrap break-all">
+              <div className="bg-[#090d16] p-3 rounded-xl border border-slate-800/90 font-mono text-xs text-red-200 overflow-x-auto whitespace-pre-wrap break-all">
                 {finding.evidence}
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function FindingDetailModal({
               value={currentStatus}
               disabled={updating}
               onChange={(e) => handleStatusChange(e.target.value)}
-              className="bg-slate-900 border border-slate-700 text-xs text-white rounded-lg px-3 py-1.5 focus:outline-none focus:border-cyan-500 cursor-pointer"
+              className="bg-slate-900 border border-slate-700 text-xs text-white rounded-lg px-3 py-1.5 focus:outline-none focus:border-red-500 cursor-pointer"
             >
               <option value="Open">Open</option>
               <option value="In Review">In Review</option>
@@ -151,7 +151,7 @@ export default function FindingDetailModal({
               <option value="Mitigated">Mitigated</option>
               <option value="False Positive">False Positive</option>
             </select>
-            {updating && <RefreshCw className="w-3.5 h-3.5 text-cyan-400 animate-spin" />}
+            {updating && <RefreshCw className="w-3.5 h-3.5 text-red-400 animate-spin" />}
           </div>
           <button
             id="modal-done-btn"
